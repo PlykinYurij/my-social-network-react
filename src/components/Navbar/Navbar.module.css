@@ -1,0 +1,10 @@
+.nav {
+    grid-area: n;
+    background-color: #9df9ef;
+}
+.item {
+    color: #283618;
+}
+.item.active {
+    font-weight: bold;
+}
