@@ -1,7 +1,8 @@
 .item {
     display: flex;
+    padding-top: 10px;
 }
 .picture {
-    width: 40px;
+    max-width: 40px;
     border-radius: 40%;
 }

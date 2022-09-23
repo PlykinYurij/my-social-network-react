@@ -1,16 +1,12 @@
 import React from "react";
 import MyPosts from "./MyPosts/MyPosts";
 import classes from "./Profile.module.css";
+import ProfileInfo from "./Profileinfo/Profileinfo";
 
 const Profile = () => {
   return (
     <div>
-      <div>
-        <img className={classes.footerPicter} src="https://img2.goodfon.ru/original/3360x1050/1/8d/gory-vershiny-dolina-reka-les.jpg" />
-      </div>
-      <div>
-        ava + desp
-      </div>
+      <ProfileInfo />
       <MyPosts />
     </div>
   )

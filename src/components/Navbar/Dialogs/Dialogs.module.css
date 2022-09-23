@@ -1,0 +1,26 @@
+.dialogs {
+    display: flex;
+    padding-left: 10px;
+    padding-top: 10px;
+    
+
+}
+.dialogsItems {
+    min-width: 30%;
+
+}
+/* .dialog {
+
+} */
+.messenges {
+    min-width: 70%;
+
+}
+/* .messeng {
+
+
+} */
+
+.dialogsItems .active {
+    font-weight: bold;
+}

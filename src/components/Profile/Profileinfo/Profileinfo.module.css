@@ -1,0 +1,24 @@
+.footerPicter {
+    padding: 0px;
+    max-height: 100px;
+    width: 100%;
+    
+}
+.descriptionBlock {
+    padding: 10px;
+    display: flex;
+}
+
+.infoBlock {
+    padding-left: 20px;
+    font-family: serif;
+}
+
+.infoBlock h1, h2, h3, h4, h5 {
+    line-height: 5px;
+}
+.avatarBlock img {
+
+    max-width: 200px;
+    border-radius: 20%;
+}
