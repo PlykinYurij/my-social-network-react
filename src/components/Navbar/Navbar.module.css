@@ -1,10 +1,13 @@
 .nav {
     grid-area: n;
     background-color: #9df9ef;
+    padding: 20px;
 }
-.item {
+.item a {
     color: #283618;
+    text-decoration: none;
+    font-weight: lighter;
 }
-.item.active {
-    font-weight: bold;
+.item a.active {
+    font-weight: normal;
 }
