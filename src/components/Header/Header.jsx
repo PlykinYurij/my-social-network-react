@@ -4,7 +4,7 @@ import classes from "./Header.module.css";
 const Header = () => {
     return (
         <header className={classes.header}>
-        <img src="https://61.img.avito.st/640x480/5680136361.jpg" />
+        <div><img src="https://it-yota.ru/upload/iblock/cc0/podklyuchenie_yota_4g.png" alt="logo"/></div>        
       </header>
     )
 }

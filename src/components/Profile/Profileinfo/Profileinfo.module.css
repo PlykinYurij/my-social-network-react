@@ -12,7 +12,12 @@
 .infoBlock {
     padding-left: 20px;
     font-family: serif;
+    color: black;
+    font-size: 25px;
+    font-weight: bold;
+    
 }
+
 
 .infoBlock h1, h2, h3, h4, h5 {
     line-height: 5px;
@@ -22,3 +27,4 @@
     max-width: 200px;
     border-radius: 20%;
 }
+

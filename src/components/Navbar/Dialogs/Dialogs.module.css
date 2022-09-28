@@ -9,10 +9,8 @@
     min-width: 30%;
 
 }
-/* .dialog {
 
-} */
-.messenges {
+.messages {
     min-width: 70%;
 
 }
@@ -20,7 +18,10 @@
 
 
 } */
-
-.dialogsItems .active {
-    font-weight: bold;
+.dialog a {
+    text-decoration: none;
+    color: #283618;
+}
+.dialog a.active {
+    font-weight: 100;
 }
