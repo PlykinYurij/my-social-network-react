@@ -1,0 +1,12 @@
+
+.avatar {
+    max-width: 5%;
+}
+
+.selectPage {
+    font-weight: bold;
+}
+.pageList {
+    max-width: 1100px;
+    display: flex;
+}

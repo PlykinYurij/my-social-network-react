@@ -1,6 +1,5 @@
 import React from "react";
 import "./App.css";
-import Dialogs from "./components/Navbar/Dialogs/Dialogs";
 import Header from "./components/Header/Header";
 import Navbar from "./components/Navbar/Navbar";
 import Profile from "./components/Profile/Profile";
@@ -8,7 +7,8 @@ import { BrowserRouter, Route, Routes } from "react-router-dom"
 import News from "./components/Navbar/News/News";
 import Music from "./components/Navbar/Music/Music";
 import Settings from "./components/Navbar/Settings/Settings";
-import { addPost } from "./Redux/state";
+import DialogsContainer from "./components/Navbar/Dialogs/DialogsContainer";
+import UsersContainer from "./components/Navbar/Users/UsersContainer";
 
 const App = (props) => {
   return (
@@ -18,8 +18,9 @@ const App = (props) => {
         <Navbar />
         <div className="app-wrapper-content">
           <Routes>
-            <Route path="/profile" element={<Profile profilePage={props.state.profilePage} dispatch={props.dispatch}/>} />
-            <Route path="/dialogs/*" element={<Dialogs dialogsPage={props.state.dialogsPage} dispatch={props.dispatch}/>} />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/dialogs/*" element={<DialogsContainer />} />
+            <Route path="/users/*" element={<UsersContainer />} />
             <Route path="/news" element={<News />} />
             <Route path="/music" element={<Music />} />
             <Route path="/settings" element={<Settings />} />

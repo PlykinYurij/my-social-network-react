@@ -14,14 +14,21 @@
     min-width: 70%;
 
 }
-/* .messeng {
-
-
-} */
+.dialog {
+    display: flex;
+}
 .dialog a {
     text-decoration: none;
     color: #283618;
 }
 .dialog a.active {
     font-weight: 100;
+}
+
+.avatar {
+    min-width: 35px ;
+}
+.avatar img {
+    max-height: 30px;
+    border-radius: 50%;
 }
