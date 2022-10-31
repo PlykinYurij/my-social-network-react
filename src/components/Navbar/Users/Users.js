@@ -11,8 +11,8 @@ let Users = (props) => {
     return <div>
             <div className={classes.pageList}>
                 {
-                    pages.map(page => <div className={props.currentPage === page && classes.selectPage}
-                        onClick={() => { props.gonPageChanged(page) }}>{page}-</div>)
+                    pages.map(page => <span className={props.currentPage === page && classes.selectPage}
+                        onClick={() => { props.onPageChanged(page) }}>{page}-</span>)
                 }
 
             </div>
