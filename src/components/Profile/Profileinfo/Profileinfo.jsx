@@ -1,7 +1,11 @@
 import React from "react";
+import Preloader from "../../common/Preloader/Preloader";
 import classes from "./Profileinfo.module.css";
 
-const ProfileInfo = () => {
+const ProfileInfo = (props) => {
+    if (!props.profile) {
+        return <Preloader />
+    }
     return (
         <div className={classes.profileInfoBlock}>
             <div>
@@ -9,12 +13,15 @@ const ProfileInfo = () => {
             </div>
             <div className={classes.descriptionBlock}>
                 <div className={classes.avatarBlock}>
-                    <img src="https://i1.sndcdn.com/avatars-000304187408-ujccd9-t500x500.jpg"></img>
+                    <img src={props.profile.photos.large}></img>
                 </div>
                 <div className={classes.infoBlock}>
-                    <p>Yura Plykin</p>
-                    <p>Age: 25</p>
-                    <p>My hobbies: frontend</p>
+                    <p>{props.profile.fullName}</p>
+                    <p>Обо мне: {props.profile.aboutMe}</p>
+                    <p>Контакты: 
+                    <p>vk: {props.profile.contacts.vk}</p>
+                    <p>instagram: {props.profile.contacts.instagram}</p>
+                    </p>
                 </div>
             </div>
         </div>
