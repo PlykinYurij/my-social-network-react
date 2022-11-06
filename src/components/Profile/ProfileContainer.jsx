@@ -2,18 +2,16 @@ import React from "react";
 import Profile from "./Profile";
 import axios from "axios";
 import { connect } from "react-redux";
-import {setUserProfile} from "../../Redux/profile-reducer"
+import {setUserProfile, getUserProfile} from "../../Redux/profile-reducer"
 import {useLocation, useNavigate, useParams} from "react-router-dom"
+import { profileAPI } from "../api/api";
 
 
 class ProfileContainer extends React.Component {
     componentDidMount () { 
         let userId = this.props.router.params.userId // обращение к юзер айди для того что бы вставлять параметр при вызове аякс запроса
         if (!userId) {userId = 2}
-        axios.get(`https://social-network.samuraijs.com/api/1.0/profile/` + userId)
-        .then(response => {
-            this.props.setUserProfile(response.data)
-        });
+        this.props.getUserProfile(userId)
     }
     render () {
         return (
@@ -43,4 +41,4 @@ function withRouter (Component) { //хок с помощью которого о
 }
 
 
-export default connect(mapStateToProps, {setUserProfile}) (withRouter(ProfileContainer));
+export default connect(mapStateToProps, {setUserProfile, getUserProfile}) (withRouter(ProfileContainer));

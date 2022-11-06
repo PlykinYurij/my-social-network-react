@@ -11,17 +11,25 @@ export const userAPI = {
     getUsers(currentPage, pageSize) {
         return instatnce.get(`users/?page=${currentPage}&count=${pageSize}`)
             .then(response => response.data)
-    }
-}
-
-export const followedAPI = {
-    deleteUsers (id) {
+    },
+    unfollow(id) {
         return instatnce.delete(`follow/${id}`)
             .then(response => response.data)
     },
-    postUsers (id) {
-        return instatnce.post (`follow/${id}`)
-        .then(response => response.data)
+    follow(id) {
+        return instatnce.post(`follow/${id}`)
+            .then(response => response.data)
     }
 }
 
+export const headerAPI = {
+    getAuthMe() {
+        return instatnce.get(`auth/me`).then(response => response.data)
+    }
+}
+
+export const profileAPI = {
+    getUserProfile(userId) {
+        return instatnce.get(`profile/` + userId).then(response => response.data)
+    }
+}
