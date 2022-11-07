@@ -1,8 +1,6 @@
-import axios from "axios";
 import React from "react";
 import { connect } from "react-redux";
-import { setAuthUserData, authMe } from "../../Redux/auth-reducer";
-import { headerAPI } from "../api/api";
+import { authMe } from "../../Redux/auth-reducer";
 import Header from "./Header";
 
 class HeaderContainer extends React.Component {
@@ -19,4 +17,4 @@ const mapStateToProps = (state) => ({
     login: state.auth.login
 })
 
-export default connect (mapStateToProps, {setAuthUserData, authMe}) (HeaderContainer);
+export default connect (mapStateToProps, { authMe}) (HeaderContainer);
