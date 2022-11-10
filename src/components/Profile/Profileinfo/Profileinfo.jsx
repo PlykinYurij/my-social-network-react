@@ -17,13 +17,13 @@ const ProfileInfo = (props) => {
                     <img src={props.profile.photos.large}></img>
                 </div>
                 <div className={classes.infoBlock}>
-                    <p>{props.profile.fullName}</p>
-                    <Status status="Hello world" />
-                    <p>Обо мне: {props.profile.aboutMe}</p>
-                    <p>Контакты: 
-                    <p>vk: {props.profile.contacts.vk}</p>
-                    <p>instagram: {props.profile.contacts.instagram}</p>
-                    </p>
+                    <div>{props.profile.fullName}</div>
+                    <div><Status status={props.status} updateStatus={props.updateStatus} /></div>
+                    <div>Обо мне: {props.profile.aboutMe}</div>
+                    <div>Контакты: 
+                    <div>vk: {props.profile.contacts.vk}</div>
+                    <div>instagram: {props.profile.contacts.instagram}</div>
+                    </div>
                 </div>
             </div>
         </div>

@@ -31,5 +31,13 @@ export const headerAPI = {
 export const profileAPI = {
     getUserProfile(userId) {
         return instatnce.get(`profile/` + userId).then(response => response.data)
+    },
+    getStatus (userId) {
+        return instatnce.get(`profile/status/` + userId).then(response => response.data)
+    },
+
+    updateStatus (status) {
+        return instatnce.put (`profile/status`, {status: status}).then(response => response.data)
     }
 }
+
