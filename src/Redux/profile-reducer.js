@@ -11,7 +11,6 @@ let initialState = {
         { id: 2, message: "Мой первый пост", likesCount: 16 },
 
     ],
-    newPostText: "ваш пост",
     profile: null,
     status: ""
 }
@@ -19,17 +18,10 @@ let initialState = {
 const profileReducer = (state = initialState, action) => {
     switch (action.type) {
         case ADD_POST:
-            let text = state.newPostText;
+            let text = action.newPostText;
             return {
                 ...state,
-                newPostText: "",
                 posts: [{ id: 5, likesCount: 0, message: text }, ...state.posts]
-            }
-
-        case UPDATE_NEW_POST_TEXT:
-            return {
-                ...state,
-                newPostText: action.newText
             }
 
         case SET_USER_PROFILE:
@@ -46,11 +38,7 @@ const profileReducer = (state = initialState, action) => {
     }
 }
 
-export const appDateActionCreate = () => ({ type: ADD_POST })
-
-export const upDateNewPostTextActionCreate = (text) =>
-    ({ type: UPDATE_NEW_POST_TEXT, newText: text })
-
+export const appDateActionCreate = (newPostText) => ({ type: ADD_POST, newPostText })
 
 export const setUserProfile = (profile) => ({ type: SET_USER_PROFILE, profile })
 

@@ -25,6 +25,13 @@ class Status extends React.Component {
         })
     }
 
+    componentDidUpdate (prevProps, prevState) {
+        if (prevProps.status !==  this.props.status)
+        this.setState ({
+            status: this.props.status
+        })
+    }
+
     render() {
         return <div>
             {!this.state.editMode && <div>

@@ -1,5 +1,5 @@
 import React from "react";
-import { appDateActionCreateMessage, updateNewMessageTextActionCreate } from "../../../Redux/dialogs-reducer";
+import { appDateActionCreateMessage } from "../../../Redux/dialogs-reducer";
 import Dialogs from "./Dialogs";
 import { connect } from "react-redux";
 import withAuthRedirect from "../../../hoc/withAuthRedirect";
@@ -14,8 +14,7 @@ let mapStateToProps = (state) => {
 
 let mapDispatchToProps = (dispatch) => {
     return {
-        updateNewMessage: (text) => { dispatch(updateNewMessageTextActionCreate(text)) },
-        sendMessage: () => { dispatch(appDateActionCreateMessage()) }
+        sendMessage: (newMessageBody) => { dispatch(appDateActionCreateMessage(newMessageBody)) }
 
     }
 }
