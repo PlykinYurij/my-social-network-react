@@ -22,12 +22,6 @@ export const userAPI = {
     }
 }
 
-export const headerAPI = {
-    getAuthMe() {
-        return instatnce.get(`auth/me`).then(response => response.data)
-    }
-}
-
 export const profileAPI = {
     getUserProfile(userId) {
         return instatnce.get(`profile/` + userId).then(response => response.data)
@@ -38,6 +32,18 @@ export const profileAPI = {
 
     updateStatus (status) {
         return instatnce.put (`profile/status`, {status: status}).then(response => response.data)
+    }
+}
+
+export const headerAPI = {
+    getAuthMe() {
+        return instatnce.get(`auth/me`)
+    },
+    login(email, password, rememberMe = false) {
+        return instatnce.post (`auth/login`, {email, password, rememberMe})
+    },
+    loginOut () {
+        return instatnce.delete (`auth/login`)
     }
 }
 
