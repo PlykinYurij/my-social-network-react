@@ -10,7 +10,7 @@ import { compose } from "redux";
 class ProfileContainer extends React.Component {
     componentDidMount() {
         let userId = this.props.router.params.userId // обращение к юзер айди для того что бы вставлять параметр при вызове аякс запроса
-        if (!userId) { userId = this.props.authorizedUserId }
+        if (!userId) { userId = 26542 }
         this.props.getUserProfile(userId)
         this.props.getStatus (userId)
     }
