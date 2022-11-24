@@ -82,29 +82,25 @@ export const getUsers = (currentPage, pageSize) => {
     }
 }
 
+const followUnfollow = async (dispatch, userId, apiMetod, actionCreator) => {
+    dispatch(toggleFollowingProgress(true, userId))
+    let data = await apiMetod(userId)
+    if (data.resultCode == 0) {
+        dispatch(actionCreator(userId))
+    }
+    dispatch(toggleFollowingProgress(false, userId))
+
+}
+
 export const follow = (userId) => {
     return (dispatch) => {
-        dispatch (toggleFollowingProgress(true, userId))
-        userAPI.follow(userId)
-            .then(data => {
-                if (data.resultCode === 0) {
-                    dispatch (followSuccess(userId))
-                }
-                dispatch (toggleFollowingProgress(false, userId))
-            });
+        followUnfollow(dispatch, userId, userAPI.follow.bind(userAPI), followSuccess)
     }
 }
 
 export const unfollow = (userId) => {
     return (dispatch) => {
-        dispatch (toggleFollowingProgress(true, userId))
-        userAPI.unfollow(userId)
-            .then(data => {
-                if (data.resultCode === 0) {
-                    dispatch (unfollowSuccess(userId))
-                }
-                dispatch (toggleFollowingProgress(false, userId))
-            });
+        followUnfollow(dispatch, userId, userAPI.unfollow.bind(userAPI), unfollowSuccess)
     }
 }
 

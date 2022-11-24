@@ -1,23 +1,13 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import userPhoto from "../../../assets/images/avatar2.png";
+import Paginator from "../../common/Paginator/Paginator";
 import classes from "./Users.module.css"
-import { userAPI } from "../../api/api";
 
 let Users = (props) => {
-    let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize);
-    let pages = [];
-    for (let i = 1; i <= pagesCount; i++) {
-        pages.push(i)
-    }
     return <div>
-        <div className={classes.pageList}>
-            {
-                pages.map(page => <span className={props.currentPage === page && classes.selectPage}
-                    onClick={() => { props.onPageChanged(page) }}>{page}-</span>)
-            }
-
-        </div>
+        <Paginator totalUsersCount={props.totalUsersCount} pageSize={props.pageSize}
+         currentPage={props.currentPage} onPageChanged={props.onPageChanged} />
         {
             props.users.map(user => <div key={user.id}>
                 <span>
@@ -29,7 +19,7 @@ let Users = (props) => {
                     <div>
                         {user.followed
                             ? <button disabled={props.followingInPropress.some(id => id === user.id)} onClick={() => {
-                                props.unfollow (user.id)
+                                props.unfollow(user.id)
                             }}>Unfollow</button>
                             : <button disabled={props.followingInPropress.some(id => id === user.id)} onClick={() => {
                                 props.follow(user.id)

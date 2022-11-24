@@ -1,0 +1,8 @@
+.pageList {
+    max-width: 1100px;
+    display: flex;
+}
+
+.selectPage {
+    font-weight: bold;
+}
